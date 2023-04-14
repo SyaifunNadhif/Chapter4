@@ -1,0 +1,13 @@
+sequelize db:create
+
+sequelize-cli model:generate --name Product --attributes name:string,quantity:integer
+
+sequelize-cli model:generate --name Component --attributes name:string,description:text
+
+sequelize-cli model:generate --name Supplier --attributes name:string,address:text
+
+sequelize-cli model:generate --name Product_component --attributes product_id:integer,component_id:integer
+
+sequelize-cli model:generate --name Component_supplier --attributes supplier_id:integer,component_id:integer
+
+sequelize db:migrate
